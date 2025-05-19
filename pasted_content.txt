@@ -1,0 +1,145 @@
+ Projeto: Sistema de Gestão de Clínicas Médicas (SGCM)
+🔍 Objetivo:
+Desenvolver um sistema completo para gestão de uma clínica médica, que permita aos administradores, médicos e pacientes acessarem funcionalidades distintas, com controle de agendamentos, prontuários, pagamentos e relatórios.
+
+🧩 Módulos do Sistema
+Autenticação de Usuário (Login/Logout)
+
+3 tipos de usuários: Administrador, Médico, Paciente.
+
+Segurança com senhas criptografadas (bcrypt).
+
+Cadastro e Gerenciamento
+
+Cadastro de médicos com especialidades, horários disponíveis.
+
+Cadastro de pacientes com informações pessoais e histórico.
+
+Cadastro de atendimentos, consultas e prontuários.
+
+Agendamento de Consultas
+
+Paciente pode solicitar agendamento online.
+
+Médicos visualizam agenda em painel próprio.
+
+Sistema evita conflitos de horários.
+
+Prontuário Eletrônico
+
+Médico registra histórico, diagnósticos, exames e receitas.
+
+Histórico acessível apenas ao médico e ao paciente.
+
+Financeiro e Pagamentos
+
+Geração de boletos, registro de pagamentos.
+
+Relatórios financeiros por mês/ano.
+
+Relatórios Gerenciais
+
+Consultas por período, mais atendimentos por médico.
+
+Filtros por especialidade, data, paciente etc.
+
+Painel Administrativo
+
+Gráficos com dados do sistema (consultas realizadas, receita total etc).
+
+Permite bloquear/ativar contas.
+
+🖥️ Interface Gráfica
+Tecnologias recomendadas:
+
+Frontend: HTML5, CSS3, Bootstrap 5, JavaScript (ou jQuery).
+
+Gráficos: Chart.js ou ApexCharts.
+
+UX: Páginas responsivas, com navegação intuitiva.
+
+Templates sugeridos: AdminLTE, SB Admin 2
+
+🧱 Banco de Dados (MySQL)
+Principais Tabelas:
+sql
+Copiar
+Editar
+usuarios (id, nome, email, senha, tipo_usuario)
+medicos (id_usuario, especialidade, crm, horario_inicio, horario_fim)
+pacientes (id_usuario, data_nascimento, plano_saude)
+consultas (id, id_paciente, id_medico, data, hora, status)
+prontuarios (id, id_consulta, sintomas, diagnostico, receita, observacoes)
+pagamentos (id, id_consulta, valor, forma_pagamento, status)
+🛠️ Tecnologias a utilizar
+Componente	Tecnologia
+Linguagem	PHP 8+
+Banco de dados	MySQL 8
+ORM opcional	PDO
+Frontend	HTML5, CSS3, JS, Bootstrap
+Painel Admin	AdminLTE ou SB Admin 2
+Autenticação	PHP Sessions / JWT
+Segurança	Criptografia bcrypt, CSRF
+Relatórios	PDF com DomPDF ou TCPDF
+
+✅ Funcionalidades Avançadas (opcional)
+Envio de e-mails automáticos (confirmação de consulta, lembrete).
+
+Login com autenticação em duas etapas (2FA).
+
+Dashboard com gráficos interativos.
+
+Exportação de relatórios para PDF.
+
+Upload de exames ou arquivos (PDF/JPG).
+
+📁 Estrutura Sugerida de Diretórios
+bash
+Copiar
+Editar
+/sgcm
+│
+├── /public
+│   ├── index.php
+│   ├── login.php
+│   └── assets/
+│       └── css, js, imgs
+│
+├── /app
+│   ├── controllers/
+│   ├── models/
+│   ├── views/
+│   └── core/ (conexão PDO, roteador)
+│
+├── /config
+│   └── database.php
+│
+└── /vendor (se usar composer)
+🚀 Como começar?
+Planejamento do Banco de Dados:
+
+Use diagramas (ex: DBDesigner ou draw.io).
+
+Crie o script SQL inicial e popule dados para testes.
+
+Desenvolvimento do Backend (PHP):
+
+Use arquitetura MVC.
+
+Comece pela autenticação e cadastro de usuários.
+
+Criação do Frontend:
+
+Desenvolva templates básicos para cada tipo de usuário.
+
+Integre com Bootstrap para responsividade.
+
+Testes e Validações:
+
+Verifique conflitos de horários, segurança de rotas, validação de dados.
+
+Aprimoramentos:
+
+Adicione AJAX para ações sem recarregar páginas.
+
+Aplique boas práticas de segurança.
